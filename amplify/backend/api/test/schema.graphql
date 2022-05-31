@@ -1,0 +1,25 @@
+type User
+@model(subscriptions: null)
+@auth(
+  rules: [
+    { allow: owner },
+    { allow: private, operations: [read,update,delete] }
+  ]) {
+  id: ID!
+  amount: Int
+  description: String
+  paper: String
+}
+
+type Sleep
+@model(subscriptions: null)
+@auth(
+  rules: [
+    { allow: owner },
+    { allow: private, operations: [read,update,delete] }
+  ]) {
+  id: ID!
+  description: String
+  pattern: String
+  paper: String
+}
